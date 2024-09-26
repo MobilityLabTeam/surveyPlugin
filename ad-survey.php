@@ -475,8 +475,10 @@ class AdSurvey{
             echo "<hr class='wp-header-end adsurvery__manage__wrapper__line'>";
 
             echo "<div class='adsurvery__manage__wrapper__copy'>";
-                echo "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed massa tortor, auctor vitae pretium ut, tempus sed libero.</p>";
-                echo "<p>Vivamus condimentum vestibulum ipsum, et bibendum odio elementum sit amet.</p>";
+                echo "<p>To add a survey onto a page or post you will need a shortcode which is provided below.</p>";
+                echo "<p>To copy the shortcode for a specific survey just click the <em>'Copy Shortcode'</em> button located directly under the survey title.</p>";
+                echo "<p>To publicly render a survey, go and edit the desired page or post. Then paste the copied shortcode into the page editor and save your changes.</p>";
+                echo "<p>You can also delete a survey that is not needed anymore by clicking the <em>'Delete Survey'</em> button. This will not delete any previously submitted user data.</p>";
             echo "</div>";
 
             // manage saved surveys
@@ -514,7 +516,7 @@ class AdSurvey{
 
             echo "<div class='adsurvery__import__wrapper__copy'>";
                 echo "<p>Please upload an excel file <em>(xlxs) with all of your questions</em>.</p>";
-                echo "<p>Each spreadsheet inside <span class='--survey-error'>your file must have a unique name</span> and should be considered as a seperate survery.</p>";
+                echo "<p>Each spreadsheet inside <span class='--survey-error'>your file must have a unique name</span> and should be considered as a separate survey.</p>";
                 echo "<p><a href='".$adSampleFile."' target='_blank' download>Click here</a> to see a sample file to properly setup your data.</p>";
             echo "</div>";
 
@@ -551,7 +553,7 @@ class AdSurvey{
         echo "<div class='wrap adsurvery__export__wrapper'>";
     
             // title
-            echo "<h1 class='wp=heading-inline adsurvery__export__wrapper__header'>Export Questions</h1>";
+            echo "<h1 class='wp=heading-inline adsurvery__export__wrapper__header'>Export Results</h1>";
 
             // response area
             echo "<div class='adsurvey__export__wrapper__response'>".$this->displayMessage()."</div>";
@@ -561,15 +563,15 @@ class AdSurvey{
 
             // intro copy
             echo "<div class='adsurvery__export__wrapper__copy'>";
-                echo "<p>Click the 'export' button below to download all of the survey responses.</p>";
-                echo "<p>The download file will be formated as an excel file <em>(xlxs)</em>.</p>";
+                echo "<p>Click the <em>'Export'</em> button below to download all user submitted survey responses.</p>";
+                echo "<p>The downloaded file will be formatted as an excel file <em>(xlxs)</em>.</p>";
             echo "</div>";
 
             // form
             echo "<form class='adsurvery__export__wrapper__form' action='".esc_url(admin_url('admin-post.php')."?action=downloadexportfile")."' method='post'>";
 
                 // submit
-                echo "<p class='adsurvery__export__wrapper__form__submit'><input class='button button-primary' type='submit' value='Submit'></p>";
+                echo "<p class='adsurvery__export__wrapper__form__submit'><input class='button button-primary' type='submit' value='Export'></p>";
                 
                 // nonce field - prevent xss - action:name
                 echo wp_nonce_field("adSurveyExportNonce", "ad_survey_nonce", true, false);

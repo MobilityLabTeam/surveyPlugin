@@ -1,12 +1,12 @@
 {
-  "admin.f3b72807fe6a418b1b97.hot-update.js.map": "admin.f3b72807fe6a418b1b97.hot-update.js.map",
+  "admin.css": "admin.css",
+  "admin.css.map": "admin.css.map",
   "admin.js": "admin.js",
   "admin.js.map": "admin.js.map",
   "checkmark.png": "7e6acff1e98873626b85.png",
   "loading.gif": "803f24369a085e35482e.gif",
-  "main.f3b72807fe6a418b1b97.hot-update.js.map": "main.f3b72807fe6a418b1b97.hot-update.js.map",
-  "main.gif": "803f24369a085e35482e.gif",
+  "main.css": "main.css",
+  "main.css.map": "main.css.map",
   "main.js": "main.js",
-  "main.js.map": "main.js.map",
-  "main.png": "7e6acff1e98873626b85.png"
+  "main.js.map": "main.js.map"
 }
