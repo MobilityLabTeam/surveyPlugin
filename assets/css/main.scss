@@ -1,0 +1,239 @@
+/*
+    Description: plugin main user/frontend styling
+    Author URI: adillice.com
+    Author: adillice
+    Version: 1.0.0
+*/
+
+/*************************************************************/
+/* frontend stuff ********************************************/
+/*************************************************************/
+// survey block
+.ads{
+    
+    // wrapper
+    &__questions{
+        position:relative;
+        border-radius:12px;
+        border:1px solid #ccc;
+        font-family:Arial, Helvetica, sans-serif;
+        background-color:#fff;
+        padding:20px 30px;
+
+        // reset box-sizing
+        & *{ box-sizing:border-box;}
+
+        // close bttn
+        &__close{
+            position:absolute;
+            border:1px solid #c4c4c4;
+            background-color:#eaeaea;
+            border-radius:50px;
+            cursor:pointer;
+            height:30px;                   
+            width:30px; 
+            right:10px;
+            top:10px;
+            z-index:9;
+
+            // before:
+            &::before{
+                content:"\2716";
+                position:absolute;
+                display:table-cell;
+                font-size:1.4em;
+                color:#4d4d4d;
+                margin: auto;
+                bottom:0;
+                right:0;
+                left:0;
+                top:1px;
+            }
+
+            // hover
+            &:hover{
+                opacity:0.6;
+            }
+
+        }
+
+        // form
+        &__form{
+            padding:0;
+            margin:0;
+
+            // list
+            &__ul{
+                list-style:none !important;
+                padding:0 !important;
+                margin:0 !important;
+
+                // li elements
+                &__li{
+                    display:flex;
+                    flex-direction:column;
+                    padding:0 !important;
+                    margin:0 !important;
+                    width:100%;
+
+                    // header
+                    &__header{
+                        text-transform:capitalize;
+                        color:#4d4d4d;
+                        font-size:1.2em;
+                    }
+
+                    // label
+                    & label{
+                        font-size:0.95em;
+                        color:#3c3c3c;
+                        cursor:pointer;
+                        margin:4px 0;
+
+                        // input
+                        & input{
+                            cursor:pointer;
+                            // transform:translateY(0.1em) scale(1.2);
+                            transform:translateY(0.1em);
+                            margin:0 10px 0 0;
+                            padding:3px;
+                        }
+
+                    }
+
+                    // text input
+                    &__text{
+                        border:0;
+                        border-bottom:1px solid #ccc;
+                        margin-top:-10px;
+                        padding:10px;
+                        outline:0;
+                    }
+
+                }
+
+            }
+
+            // GUI
+            &__ui{
+                margin:20px 0 10px 0;
+
+                // wrapper
+                &__wrapper{
+                    flex-direction:row;
+                    justify-content:start;
+                    align-items:center;
+                    display:flex;
+                    margin:0;
+
+                    // prev and next bttns
+                    &__prev, &__next{
+                        border:1px solid #c4c4c4;
+                        background-color:#eaeaea;
+                        border-radius:50px;
+                        cursor:pointer;
+                        height:30px;                   
+                        width:30px;               
+                        
+                        // ::before
+                        &::before{
+                            vertical-align:middle;
+                            display:table-cell;
+                            font-size:1.4em;
+                            color:#4d4d4d;
+                            content:"\279C";
+                        }
+
+                        // hover
+                        &:hover{
+                            opacity:0.6;
+                        }
+                        
+                    }
+
+                    // flip prev bttn
+                    &__prev{
+                        transform:scaleX(-1);
+                    }
+
+                    // GUI copy
+                    &__copy{
+                        font-size:0.8em;
+                        margin:0 10px;
+                    }
+
+                }
+
+                // msg area
+                &__msg{
+                    padding:0 0 5px 0;
+                    font-size:0.9em;
+
+                    // p tags
+                    & p{
+                        text-transform:capitalize;
+                        margin:3px 0 0 0;
+                        padding:0;
+                    }                  
+
+                }
+
+                // submit bttn
+                &__submit{
+                    border-radius:3px;
+                    border:1px solid #3a4a64;
+                    background-color:#2958a8;
+                    color:#fff;
+                    padding:10px 20px;
+                    margin:20px 0 0 0;
+                    cursor:pointer;
+
+                    // hover
+                    &:hover{
+                        background-color:#3f67aa;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+    
+}
+
+// hide
+.--ad-survey-hide{
+    display:none;
+}
+
+// hide with space
+.--ad-survey-semi{
+    opacity:0.3;
+}
+
+// loading
+.--ad-survey-load{
+    background-image:url('../images/loading.gif');
+    background-position:90% 50%;
+    background-repeat:no-repeat;
+    background-size:20px 20px;
+    padding-right:37px;
+}
+
+// success msg
+.--ad-survey-msg-success{
+    padding:12px 34px !important;
+    background-image:url('../images/checkmark.png');
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    background-size:25px 26px;
+    color:#198754;
+}
+
+// error msg
+.--ad-survey-msg-error{
+    padding:13px 0 3px 0 !important;
+    color:#dc3545;
+}

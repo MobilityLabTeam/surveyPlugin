@@ -25,6 +25,9 @@ class AdSurvey{
     // init class
     public static function adSurveyInit(){
         
+        // check for session - if not start one
+        if(!session_id()) session_start();
+
         // set class
         $adSurveyClass = __CLASS__;
         
@@ -1087,9 +1090,6 @@ class AdSurvey{
                     // ----------------------------------------- //
                     // SESSION: -------------------------------- //
                     // ----------------------------------------- //
-                    // start session
-                    session_start();
-
                     // update db option
                     $_SESSION[$surveyID."_complete"] = (bool) true;
                     
