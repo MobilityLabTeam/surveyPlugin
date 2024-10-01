@@ -18,7 +18,9 @@
         border:1px solid #ccc;
         font-family:Arial, Helvetica, sans-serif;
         background-color:#fff;
+        margin:10px 0 20px 0;
         padding:20px 30px;
+        display:flex;
 
         // reset box-sizing
         & *{ box-sizing:border-box;}
@@ -41,9 +43,10 @@
                 content:"\2716";
                 position:absolute;
                 display:table-cell;
-                font-size:1.4em;
+                font-size:1.3em;
+                font-family:Arial, Helvetica, sans-serif;
                 color:#4d4d4d;
-                margin: auto;
+                margin:auto;
                 bottom:0;
                 right:0;
                 left:0;
@@ -67,6 +70,7 @@
                 list-style:none !important;
                 padding:0 !important;
                 margin:0 !important;
+                display:flex !important;
 
                 // li elements
                 &__li{
@@ -76,11 +80,20 @@
                     margin:0 !important;
                     width:100%;
 
+                    //before and after reset
+                    &::before, &::after{
+                        content:"" !important;
+                        padding:0 !important;
+                        margin:0 !important;
+                    }
+
                     // header
                     &__header{
                         text-transform:capitalize;
-                        color:#4d4d4d;
+                        margin:20px 0 14px 0 !important;
+                        padding:0 !important;
                         font-size:1.2em;
+                        color:#4d4d4d;
                     }
 
                     // label
@@ -158,8 +171,8 @@
 
                     // GUI copy
                     &__copy{
-                        font-size:0.8em;
-                        margin:0 10px;
+                        font-size:0.8em !important;
+                        margin:0 10px !important;
                     }
 
                 }
