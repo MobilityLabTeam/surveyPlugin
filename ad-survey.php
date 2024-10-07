@@ -260,7 +260,7 @@ class AdSurvey{
                         $output .= "<div class='ads__questions__form__ui__msg --ad-survey-hide'></div>";
 
                         // add submit button
-                        $output .= "<input class='ads__questions__form__ui__submit".(($questionCount === 1) ? "" : " ".$jsHide." ")."' type='submit' value='Submit'>";
+                        $output .= "<input class='ads__questions__form__ui__submit ".$jsHide."' type='submit' value='Submit'>";
 
                         // hidden fields
                         $output .= wp_nonce_field("ads-result-".$title, "ad_survey_results", true, false);
@@ -967,7 +967,7 @@ class AdSurvey{
         // get survey name/id
         $surveyID = isset($postData['survey']) ? htmlspecialchars(trim($postData['survey'])) : null;
 
-        // CHECK: check if survey is complete
+        // END CASE - check if survey was already complete
         if($this->adSurveyComplete($surveyID)){
             
             // set success msg
@@ -979,11 +979,23 @@ class AdSurvey{
 
         }
 
-        // NONCE & ERROR CHECKS 
+        // END CASE - NONCE & ERROR CHECKS 
         if(is_null($nonce) || !wp_verify_nonce($nonce, "ads-result-".$surveyID)){
 
             // set error
             $output["error"] = __($this->messages["nonce"]);
+            
+            // return error
+            die(json_encode($output));
+            exit();
+
+        }
+
+        // END CASE - make sure we have at least one answer
+        if(!isset($postData["a_1"])){
+
+            // set error
+            $output["error"] = __($this->messages["required"]);
             
             // return error
             die(json_encode($output));
@@ -1059,7 +1071,7 @@ class AdSurvey{
 
         // get data
         $dbData = maybe_unserialize(get_option("ad-survey-data"));
-        
+
         // check db data
         if($dbData){
 

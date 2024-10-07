@@ -294,6 +294,9 @@ class Survey extends Utility{
     // button display status
     displayButtons(hide = false){
 
+        // end case
+        if(!this.prev || !this.next || !this.semi) return;
+
         // end case 
         if(this.questions[this.current - 1].dataset.num == 0){
 
@@ -309,28 +312,32 @@ class Survey extends Utility{
         // update bttns
         if(!hide){
 
-            // show classes
+            // add show classes
             this.prev.classList.remove(this.semi);
             this.next.classList.remove(this.semi);
         
+        // hide
         }else{
 
-            // hide classes
+            // add hide classes
             this.prev.classList.add(this.semi);
             this.next.classList.add(this.semi);
         
         }
 
         // if we are on first question keep hidden
-        if(this.current === 1) this.prev.classList.add(this.semi);
+        if(this.current && (this.current === 1)) this.prev.classList.add(this.semi);
         
         // if we are on last question keep hidden
-        if(this.current === this.total) this.next.classList.add(this.semi);
+        if(this.current && (this.current === this.total)) this.next.classList.add(this.semi);
 
     }
 
     // display submit
     displaySubmit(show = false){
+
+        // end case
+        if(!this.submit) return;
 
         // HIDE
         if(!show){
